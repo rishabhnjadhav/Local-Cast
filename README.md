@@ -32,6 +32,17 @@ If the app does not appear immediately, wait a few seconds. Some guest Wi-Fi net
 - Phone and TV connected to the same Wi-Fi network
 - VLC, Nova Player, or another UPnP/DLNA-compatible media player on the receiving device
 
+
+## Screenshot of app in Dark Mode 
+
+<img width="612" height="1752" alt="Screenshot_20261004-165239" src="https://github.com/user-attachments/assets/80aa85d5-7330-4b11-95f7-47aea3479e0f" />
+
+
+## Screenshot of app in Light Mode 
+
+<img width="612" height="1752" alt="Screenshot_20261004-165226" src="https://github.com/user-attachments/assets/fa99639a-609a-43a2-9065-980736b2c731" />
+
+
 ## Privacy
 
 Local Cast does not require an account and does not upload your media files to cloud storage. Files are streamed directly from your phone to devices on your local Wi-Fi network.
