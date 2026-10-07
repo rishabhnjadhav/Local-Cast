@@ -39,6 +39,15 @@ While Local Cast is running, open the remote URL shown in the app from a browser
 
 It does not control a TV's volume, channels, or another app's playback. Those features require a TV- or player-specific control API and are not available through generic UPnP media-server discovery.
 
+## Screenshot of app in Light Mode
+
+<img width="1224" height="5091" alt="Screenshot_20261007-173407" src="https://github.com/user-attachments/assets/63711590-a8d5-4257-abf1-97bfad171957" />
+
+## Screenshot of app in Dark Mode
+
+<img width="1224" height="5091" alt="Screenshot_20261007-173356" src="https://github.com/user-attachments/assets/54daab49-0e3c-40c7-a991-60f861d20a08" />
+
+
 ## Install
 
 Download the latest APK from [GitHub Releases](https://github.com/rishabhnjadhav/Local-Cast/releases).
