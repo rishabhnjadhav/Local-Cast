@@ -1,71 +1,81 @@
 # Local Cast
 
-Local Cast is a privacy-focused Android app that streams a selected video or media file from your phone to VLC, Nova Player, and other compatible players on the same Wi-Fi network.
-
-It uses UPnP/DLNA discovery, so compatible media players can find **Local Cast** under their local-network browser. Local Cast also provides HTTP streaming with byte-range support, allowing seeking and smoother playback.
+Local Cast is a privacy-focused Android app that shares media from your phone with compatible players on your local Wi-Fi network. It advertises a browsable UPnP/DLNA media library and provides HTTP streaming with byte-range support for seeking.
 
 ## Features
 
-- Stream a selected file from your Android phone over local Wi-Fi
-- UPnP/DLNA discovery for VLC and compatible media players
-- HTTP byte-range streaming for seeking, pause, and resume support
-- Supports video, audio, image, and other media files supported by the receiving player
-- Light mode, dark mode, and system-default appearance
-- No accounts, subscriptions, cloud storage, or internet connection required
-- Your files stay on your device and local network
+- Select and share multiple media files at once
+- Browse Local Cast from compatible UPnP/DLNA players, including VLC
+- Stream files over HTTP with byte-range support for seeking
+- Open a local web library or LAN remote from another device on the same network
+- Light, dark, and system appearance options
+- No account, cloud storage, or media uploads
 
-## How to use
-
-1. Install the Local Cast APK on your Android phone.
-2. Connect your phone and TV to the same Wi-Fi network.
-3. Open Local Cast and choose a video or media file.
-4. Tap **Start Local Cast**.
-5. On your TV, open VLC or another compatible media player.
-6. Open **Local Network** and select **Local Cast**.
-7. Choose the shared file and play it.
-
-If the app does not appear immediately, wait a few seconds. Some guest Wi-Fi networks block local device discovery.
+Local Cast only shares files you select. While the server is running, those files are accessible to devices on the same local network. Use a trusted Wi-Fi network.
 
 ## Requirements
 
-- Android 8.0 or later
-- Phone and TV connected to the same Wi-Fi network
-- VLC, Nova Player, or another UPnP/DLNA-compatible media player on the receiving device
+- Android 8.0 (API 26) or later
+- Phone and receiving device on the same Wi-Fi network
+- A player that supports UPnP/DLNA browsing or HTTP media URLs, such as VLC or Nova Player
 
+Some guest Wi-Fi networks block local device discovery. If Local Cast does not appear in the player immediately, wait a few seconds or use the HTTP library link shown in the app.
 
-## Screenshot of app in Dark Mode 
+## How to use
 
-<img width="612" height="1752" alt="Screenshot_20261004-165239" src="https://github.com/user-attachments/assets/80aa85d5-7330-4b11-95f7-47aea3479e0f" />
+1. Install Local Cast on your Android phone.
+2. Connect your phone and TV or player to the same Wi-Fi network.
+3. Open Local Cast and choose one or more media files.
+4. Tap **Start Local Cast**.
+5. On the TV, open VLC or another compatible player and browse **Local Network → Local Cast**.
+6. Choose a file from the library and play it.
+7. Tap **Stop Local Cast** when you are finished.
 
+The app also shows an HTTP address. With multiple files selected, opening that address displays the library; with one file selected, it opens that file directly. Each media URL supports HTTP byte ranges so compatible players can seek within the file.
 
-## Screenshot of app in Light Mode 
+## LAN media remote
 
-<img width="612" height="1752" alt="Screenshot_20261004-165226" src="https://github.com/user-attachments/assets/fa99639a-609a-43a2-9065-980736b2c731" />
+While Local Cast is running, open the remote URL shown in the app from a browser on a device on the same Wi-Fi network. The remote can browse the selected library, move between files, and open the selected file.
 
+It does not control a TV's volume, channels, or another app's playback. Those features require a TV- or player-specific control API and are not available through generic UPnP media-server discovery.
 
-## Privacy
+## Install
 
-Local Cast does not require an account and does not upload your media files to cloud storage. Files are streamed directly from your phone to devices on your local Wi-Fi network.
+Download the latest APK from [GitHub Releases](https://github.com/rishabhnjadhav/Local-Cast/releases).
 
-## Installation
+For an APK installed outside Google Play, Android may ask you to allow installs from the browser or file manager you use to open it. Review the prompt and approve the install to continue.
 
-Download the latest APK from the [Releases](../../releases) page.
+## Update checks
 
-Android may ask you to allow installation from unknown sources. Enable this permission for the app or file manager you use to open the APK, then install it.
+Local Cast supports update checks for APK releases. In **Settings → Update source**, enter the HTTPS URL of a JSON manifest and tap **Check for updates**. The manifest publisher must host both the JSON file and APK. For example:
 
-## Built with
+```json
+{
+  "versionCode": 4,
+  "versionName": "1.3.0",
+  "apkUrl": "https://your-release-host/LocalCast-1.3.0.apk",
+  "releaseNotes": "What changed in this release"
+}
+```
 
-- Kotlin
-- Android SDK
-- Local HTTP media server
-- UPnP/DLNA discovery
+When a newer version is found, Local Cast opens the APK link in the browser. Android requires the user to install the downloaded APK; updates are not installed silently. The APK must use the same package ID and signing key as the installed app. Version 1.1.0 does not include the update checker, so users on 1.1.0 need to install version 1.2.0 from the Releases page once before using in-app checks.
+
+If Local Cast is distributed through Google Play, use Google Play's update flow instead of sideloaded APK updates.
+
+## Font
+
+Local Cast uses Android's system `sans-serif` font family. Devices with Oh My Font installed can apply their system sans-serif font to the app. Local Cast does not bundle Oh My Font's typeface files.
+
+## Build from source
+
+1. Install Android Studio, JDK 17, and Android SDK Platform 35.
+2. Open the `LocalCast-MVP` project folder in Android Studio and sync Gradle.
+3. Run the `app` configuration on an Android device or build an APK from Android Studio.
 
 ## Version
 
-Current release: **v1.1.0**
+Current version: **v1.2.0**
 
 ## Developer
 
-Made by **Rishabh Jadhav**
-
-Thank you for installing and trying Local Cast. 💙
+Made by **Rishabh Jadhav**❤️.
